@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Meu CSS  -->
+  <link rel="stylesheet" href="./styles/form-estilo.css">
+</head>
+
+<body class="text-light bg-dark">
+  <nav class="navbar navbar-expand-sm bg-light nav justify-content-center">
+    <ul class="navbar-nav ">
+      <!-- botão que abri form de cadastro de usuários  -->
+      <li class="nav-item">
+        <span class="nav-link " href="#"><button class="btn btn-dark" id="btnFormCadUser">
+            Cadastrar usuário</button></span>
+      </li>
+
+      <!-- mini form que busca usuário pelo id -->
+      <li class="nav-item">
+        <form class="d-flex mb-3 mt-2">
+          <input class="form-control mr-sm-2" type="text" placeholder='ID há ser buscado' id="idSearch">
+          <button class="btn btn-info" id="btnSearchOne">Buscar</button>
+        </form>
+      </li>
+      <!-- botão que atualiza lista de usuários -->
+      <li class="nav-item">
+        <span class="nav-link" href="#"><a class="btn btn-warning" href="../lista-usuarios/index.html">
+            Atualizar lista de usuários</a></span>
+      </li>
+      <!-- mini form que busca usuário pelo id -->
+      <li class="nav-item">
+        <form class="d-flex mb-3 mt-2">
+          <input class="form-control mr-sm-2" type="text" placeholder='ID há ser deletado' id="idUserDelete">
+          <button class="btn btn-danger" id="btnDeleteUser">deletar</button>
+        </form>
+      </li>
+      <!-- botão que deletar todos os usuarios -->
+      <li class=" nav-item">
+        <span class="nav-link" href="#"><button class="btn btn-dark" id="btnDeleteAll" onclick="">Excluir
+            todos os usuários</button></span>
+      </li>
+
+    </ul>
+  </nav>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <span id="alert">
+            <form class="text-dark" id="form">
+              <!-- first_name: -->
+              <label class="form-label " for="modal-firstName">Nome</label>
+              <input class="form-control" type="text" id="modal-firstName" placeholder="Nome">
+
+              <!-- first_name: -->
+              <label class="form-label" for="modal-lastName">Sobrenome</label>
+              <input class="form-control" type="text" id="modal-lastName" placeholder="Sobrenome">
+
+              <!-- email -->
+              <label class="form-label" for="modal-email">Email</label>
+              <input class="form-control" type="email" id="modal-email" placeholder="Email">
+
+              <!--birth date-->
+              <label class="form-label" for="modal-birthDate">Data De
+                Nascimento</label>
+              <input class="form-control" type="date" id="modal-birthDate" placeholder="Data De Nascimento">
+
+              <!-- genero -->
+              <label class="form-label">Genero</label>
+              <select class="form-select" id="modal-genero">
+                <option value=" masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+              </select>
+              <div class="container">
+                <button class="btn btn-primary" id="btnUpdate">Update</button>
+                <button class="btn btn-warning" type="reset">Limpar Tudo</button>
+              </div>
+
+            </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista onde são carregados os elementos -->
+  <div class="container-fluid">
+    <ul class="container" id="lista" style="max-width: 600px;">
+    </ul>
+  </div>
+  <!-- bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!--  meu script -->
+  <script type="module" src="../lista-usuarios/script/searchAll.js"></script>
+  <script type="module" src="../lista-usuarios/script/deleteAll.js"></script>
+  <script type="module" src="../lista-usuarios/script/searchOne.js"></script>
+  <script type="module" src="../lista-usuarios/script/registerUser.js"></script>
+  <script type="module" src="../lista-usuarios/script/updateUser.js"></script>
+
+
+
+</body>
+
+</html>
